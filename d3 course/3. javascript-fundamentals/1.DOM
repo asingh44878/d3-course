@@ -1,0 +1,16 @@
+<!--DOM stands for Document Object Model. When the browser loads an HTML page, it
+creates a tree-like representation of all the elements: the <body>, the <p> tags, the <button> tags, everything. This tree is the DOM.
+
+      <!doctype html>
+      <html>
+        <body>
+          <p id="text">Click the button to make me blue!</p>
+          <button
+            onclick="document.getElementById('text').style.color = 'blue'"
+          >
+            Turn blue
+          </button>
+        </body>
+      </html>
+
+JavaScript can read and modify this tree. That's how it changes text, adds elements, removes them or updates styles.

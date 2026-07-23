@@ -1,0 +1,7 @@
+Booleans represent true or false. They are essential for conditional logic.
+
+const isActive = true; (When its not in '' it means the value is being assigned. In this case the value true is assigned.)
+const isComplete = flase;
+
+console.log(isActive); --> ture
+console.log(10 > 5); --> true --> comparisons return booleans.

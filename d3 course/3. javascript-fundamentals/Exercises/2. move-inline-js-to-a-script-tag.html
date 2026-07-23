@@ -1,0 +1,13 @@
+<!-- The button currently uses inline JS in its onclick attribute.
+Move that logic into a <script> tag at the bottom of the body instead.
+Use addEventListener to attach the click behavior.-->
+
+<!doctype html>
+<html>
+  <body>
+    <p id="text">Click the button to style me!</p>
+    <button class="style">Style the paragraph</button>
+    <button class="reset">Reset</button>
+    <script src="2.button-script.js"></script>
+  </body>
+</html>

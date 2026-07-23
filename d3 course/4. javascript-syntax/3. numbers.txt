@@ -1,0 +1,14 @@
+Unlike some languages, JavaScript has a single number type for both integers and decimals. Basically everything can work under const.
+No need for int and float. 
+
+const interger = 42;
+const decimal = 3.14;
+const negative = -10;
+
+console.log(integer, decimal, negative);
+42
+3.14
+-10
+
+console.log(integer + decimal);
+45.14 --> This just performed an addition.

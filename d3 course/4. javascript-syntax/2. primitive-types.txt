@@ -1,0 +1,7 @@
+//Run this code in the console. 
+// Strings are pieces of text. You can create
+them with single quotes, doublequotes or backticks. 
+
+const single = 'Hello';
+const double = "World"; 
+const backticks = `Hello World`;

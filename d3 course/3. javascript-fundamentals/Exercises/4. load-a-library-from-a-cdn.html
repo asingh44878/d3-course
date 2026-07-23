@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Shuffle colors with Lodash</h2>
+    <p id="result">red, orange, yellow, green, blue, purple</p>
+    <!--
+    1. Creates a paragraph element.
+    2. The id="result" gives it a name so JavaScript can find it later.
+    3. The text inside it the array of colors that will be shuffled.-->
+
+    <button id="btn">Shuffle</button>
+    <!--
+    1. Creates a button.
+    2. The id="btn" lets JavaScript attach an event to it.
+    3. The button text says "Shuffle".
+    -->
+    <p>Click the button to shuffle the colors</p>
+
+    <!-- Lodash is loaded from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <!--
+    1. This loads the Loadlash library from a CDN.
+    2. CDN means "Content Delivery Network", which is a fast online place to host files.
+    3. Once loaded, the library becomes available for use in your JavaScript.-->
+
+    <script>
+      const colors = ["red", "orange", "yellow", "green", "blue", "purple"];
+      /*
+      1. Creates an array of color names.
+      2. An array is a list of values stored in one variable.
+      */
+
+      document.getElementById("btn").addEventListener("click", function () {
+        /*
+        1. Finds the button with the id btn.
+        2. Adds an event listener so that when the button is clicked, the function runs.
+        */
+
+        const shuffled = _.shuffle(colors);
+        /*
+        1. Uses Loadlash's shuffle function to randomly rearrange the colors array.
+        2. The result is stored in the variable shuffled.
+        */
+
+        document.getElementById("result").textContent = shuffled.join(", ");
+        /*
+        1. Finds the paragraph with id result.
+        2. Updates its text to show the shuffled colors.
+        3. join(", ")turns the array into a single string separated by commas and spaces.
+        */
+      });
+      /*
+      - Ends the click event handler function and the addEventListener call.
+      */
+    </script>
+  </body>
+</html>

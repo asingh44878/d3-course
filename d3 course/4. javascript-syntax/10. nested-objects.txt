@@ -1,0 +1,14 @@
+Objects can contain other objects or even arrays. To access nested values, chain the dots, moving inwards.
+e.g,
+
+const person = {
+    name: "Alice",
+    address: {
+        city: "Paris",
+        country: "France",
+        values: [1, 2, 3, 4, 5]
+    }
+};
+
+console.log(person.address.city);    --> "Paris"
+console.log(person.address.country); --> "France"

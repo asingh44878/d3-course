@@ -1,0 +1,14 @@
+An array is an ordered list of values. In D3, your data will almost always be an array.
+Think of it like a list where values have mixed types.
+
+CREATING AND ACCESSING
+An array is created using square brackets []. Once its there you can access its elements by their index using 'array[index]'.
+
+const numbers = [10, 20, 30, 40];
+const fruits = ["apple", "banana", "cherry"];
+
+console.log(numbers[0]); --> 10 (Access by index starts at 0).
+console.log(numbers[2]); --> 30
+console.log(fruits[1]); --> banana
+
+Arrays are always 0 indexed - the first element is at position 0 and not 1.

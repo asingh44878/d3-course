@@ -1,0 +1,18 @@
+JavaScript has two ways to represent "nothing".
+
+undefined - a variable that hasn't been assigned a value.
+null - an intentional absence of value (you set it explicitly).
+
+let notAssigned;
+console.log(notAssigned); --> undefined
+
+const empty = null;
+console.log(empty); --> null
+
+console.log(notAssigned === null); --> true
+
+[===] in JavaScript is a strict equality operator. It checks both the value and the data type without converting them. It only returns true
+if both side-by-side elements match exactly in both type and content.
+
+In practice, you will mostly encounter 'undefined' when accessing missing properties or forgetting to return a value from a function.
+You will use 'null' when you want to explicitly say "no value here".

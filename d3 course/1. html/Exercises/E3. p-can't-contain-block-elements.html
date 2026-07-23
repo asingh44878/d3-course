@@ -1,0 +1,30 @@
+<!--<!DOCTYPE html>
+<html>
+  <body>
+     This looks fine, but the browser breaks it:
+    <p>
+      Here is some text.
+      <div style="background: lightyellow; padding: 8px;">
+        I'm a div inside a paragraph!
+      </div>
+      This text should still be in the paragraph... right?
+    </p>
+  </body>
+</html>
+-->
+
+<!doctype html>
+<html>
+  <body>
+    This looks fine, but the browser breaks it:
+    <p>
+      Here is some text.
+      <span style="background: rgb(64, 183, 13); padding: 8px">
+        I'm a span inside a paragraph!
+      </span>
+      This text should still be in the paragraph... right?
+    </p>
+  </body>
+</html>
+
+<!-- When div was used the highlighted text was pushed outside of the paragraph. Using a span fixed that.-->

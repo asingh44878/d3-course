@@ -1,0 +1,68 @@
+1. COMPARISON OPERATORS:
+
+const x = 10;
+
+console.log(x === 10);  // (===) equal to                 --> true
+console.log(x !== 5);   // (!==) not equal to             --> true
+console.log(x > 5);     // (>) greater than             --> true
+console.log(x >= 10);   // (>=) greater than or equal    --> true
+console.log(x < 20);    // (<) less than                --> true
+console.log(x <= 10);   // (<=) less than or equal       --> true
+
+// Works with strings too
+console.log("apple" === "apple");  // true          --> true
+---------------------------------------------------------------------------------------------------
+
+2. IF/ELSE
+
+The if statement runs code only when a condition is true. Add else to handle the opposite case.
+
+const temperature = 25;
+
+if (temperature > 30) {
+  console.log("It's hot!");
+} else if (temperature > 20) {
+  console.log("It's nice outside");
+} else {
+  console.log("It's cold!");
+}                                       --> This will return "It's nice outside" since the temperature is greater than 20 but less than 30.
+
+// Try changing the temperature value!
+
+MY EXAMPLE:
+
+const day = 2;
+
+if (day === 1) {
+  console.log("Its a Monday");
+} else if (day === 2){
+  console.log("Its a Tuesday");
+}else
+  console.log("I don't know what day it is.");  --> This will return "Its a Tuesday"
+---------------------------------------------------------------------------------------------------
+
+3. LOGICAL OPERATORS
+
+Combine multiple conditions with AND(&&) and OR(||). Use ! to negate a value.
+
+const age = 25;
+const hasTicket = true;
+
+console.log(age >=18 && hasTicket); --> True  | Both conditions are true.
+console.log(age <18 || hasTicket); --> True   | Only one condition is true but an OR(||) has been used, so true.
+console.log(!hasTicket); --> False            | Is negating the hasTicket, so false.
+---------------------------------------------------------------------------------------------------
+
+4. TERNARY OPERATOR
+
+For simple if/else cases the ternary operator is a compact one-liner.
+The syntax is condition ? valueIfTrue : valueIfFalse.
+This will be used when setting colors, sizes or visibility based on data values.
+
+const value = 75;
+
+const status = value > 50 ? "high" : "low";
+console.log(status); --> "high"
+
+const color = value >50 ? "green" : "yellow";
+console.log(color); --> "green"

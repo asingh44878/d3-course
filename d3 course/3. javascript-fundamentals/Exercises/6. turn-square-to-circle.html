@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Turn the square into a circle</h2>
+    <div
+      id="shape"
+      style="width: 150px; height: 150px; background-color: coral"
+    ></div>
+    <br />
+    <button class="circle">Turn to a circle.</button>
+    <button class="square">Turn to a square.</button>
+  </body>
+
+  <script>
+    document.querySelector(".circle").addEventListener("click", function () {
+      document.getElementById("shape").style.borderRadius = "50%";
+    });
+
+    document.querySelector(".square").addEventListener("click", function () {
+      document.getElementById("shape").style.borderRadius = "0%";
+    });
+
+    /*
+      When the borderRadius is 0% it will be a square.
+      */
+  </script>
+</html>

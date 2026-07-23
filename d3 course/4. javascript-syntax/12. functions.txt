@@ -1,0 +1,30 @@
+A Function is a reusable block of code. You define it once, then call it whenever you need it.
+Functions can take inputs (parameters) and return a output.
+
+1. ARROW FUNCTION (=>):
+The => separates the parameters from the Function body. Inside the curly braces, you write your logic and use return to send back a value.
+If you forget return, the function returns undefined.
+
+A.
+const addFive = (num) => {
+    return(num + 5)
+};
+
+console.log(addFive(5)); --> 10         | num is replaced by 5, so the final output is 10.
+---------------------------------------------------------------------------------------------------
+
+B.
+const double(x) => {
+    return(x*2)
+};
+
+console.log(double(2)); --> 4           | value of x is 2, so the final output is 4.
+---------------------------------------------------------------------------------------------------
+
+C.
+const add = (a,b) => {
+    return (a+b)
+};
+
+console.log(add(2,3)); --> 5            | value of a and b is 2 and 3.
+---------------------------------------------------------------------------------------------------

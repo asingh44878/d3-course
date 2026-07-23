@@ -1,0 +1,20 @@
+An object is a collection of properties. They are recognized by curly braces {}.
+
+e.g.
+const person = {
+    name: "Alice",
+    age: 12
+};                      --> This always ends in a semi-colon | numeric values are NOT assigned with "".
+
+Access these properties using the dot(.) notation. 
+e.g,
+
+const person = {
+    name: "Alice",
+    age: 12
+    city: "Paris"
+};
+
+console.log(person.name); --> Alice
+console.log(person.age);  --> 12
+console.log(person.city); --> Paris

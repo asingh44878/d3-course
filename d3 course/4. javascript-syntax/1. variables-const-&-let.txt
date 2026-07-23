@@ -1,0 +1,17 @@
+1. const - creates a variable that cannot be reassigned. Use this by default.
+2. let - creates a variable that can be reassigned. Use it only when you change the value later.
+3. var - do not use this.
+
+<!--Run the code below in the console.-->
+// const = constant, cannot be reassigned 
+const name = "Alice";
+console.log(name); 
+
+// let = can be reassigned 
+let score = 10;
+console.log(score); 
+score = 20; 
+// ✅ This works console.log(score); 
+
+// name = "Bob"; 
+// ❌ This would throw an error!

@@ -1,0 +1,15 @@
+This is the most important pattern for D3. Your data will almost always be an array of objects - each object representing one data point.
+The example below is a table with 2 columns (country & population) and 3 rows (3 objects in the array).
+e.g,
+
+const data = [                                 --> Notice how it starts with [] and has {} for the actual data.
+    {country: "France", population: 67},
+    {country: "Germany", population: 83},
+    {country: "Spain", population: 47}
+];
+
+console.log(data[0]);               --> {country: "France", population: 67}
+console.log(data[1].country);       --> "Germany"
+console.log(data[1].population);    --> 83
+
+**SYNTAX - console.log(data > object.property)

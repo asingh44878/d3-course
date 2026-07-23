@@ -1,0 +1,9 @@
+.margin {
+  background-color: #dbeafe;
+  border: 1px solid #3b82f6;
+  padding: 20px;
+  margin: 13px;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #1e40af;
+}

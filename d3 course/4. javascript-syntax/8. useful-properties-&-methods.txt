@@ -1,0 +1,9 @@
+Every array comes with built in properties and methods.
+Properties are values you can read. eg., .length, while methods are functions you can call. eg., .includes().
+
+const numbers = [5, 2, 8, 1, 9];
+
+console.log(numbers.length); --> 5                          Get the length
+console.log(numbers.includes(8)); --> true                  Check if element exists
+console.log(numbers.indexOf(8)); --> 2                      Find index of element
+console.log(numbers.join(" - ")); --> "5 - 2 - 8 - 1 - 9"   Join into a string

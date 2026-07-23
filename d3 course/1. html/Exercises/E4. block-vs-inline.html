@@ -1,0 +1,44 @@
+<!--Look at how the <div> and <span> elements render differently.
+Try swapping them: change the <div> to a <span> and vice versa. See what happens.-->
+    
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      This sentence has a
+      <span style="background: rgb(64, 183, 13); padding: 8px;">
+        span
+      </span>
+      in the middle. It flows inline.
+    </p>
+
+    <p>
+      But this sentence has a div.
+      <div
+      style="background: rgb(157, 206, 241);
+      padding: 18px 8px 128px 8px;
+      margin: 8px 128px 8px 128px;
+      display:flex;
+      justify-content:center;
+      border-radius: 8px;
+      font-size: 15px;
+      text-align: center;">
+        This is a div. <br> This is a random text inside the div.
+      </div>
+      in the middle. See the difference?
+    </p>
+    <hr>
+    <p>
+        <ul>
+      <li><i>"The <b>span is inline</b>, so it flows with the text."</i></li>
+      <br>
+      <li>The <b>div is a block-level element</b>, so it starts on a new line
+      and takes up the full width available."</i></li>
+    </ul>
+    </p>
+  </body>
+</html>
+
+<!--The span element is inline, so it flows with the text.
+The div element is a block-level element, so it starts on a new line
+and takes up the full width available.-->

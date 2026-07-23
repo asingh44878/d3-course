@@ -1,0 +1,19 @@
+p {
+  color: #dc2626;
+  font-size: 16px;
+  background-color: #fef2f2;
+  padding: 16px;
+  font-weight: bold;
+}
+
+.h {
+  color: #1e3a8a;
+  font-size: 20px;
+  background-color: #e0f2fe;
+  padding: 16px;
+  font-weight: bold;
+}
+/*There are 2 ways of applying css.
+1. Using the tag name without the dot(.) or hash(#) sign. This will apply the styles to all elements of that tag name.
+2. Using the class name with the dot(.) sign. This will apply the styles to all the elements of that class name.
+3. When adding css to the class element add a dot(.) before the class name, like .h in the example above.*/

@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>My First Barplot</h2>
+    <div id="chart"></div>
+
+    <script>
+      const data = [56, 200, 80, 260];
+      const chart = document.getElementById("chart");
+
+      for (let i = 0; i < data.length; i++) {
+        const bar = document.createElement("div");
+        bar.style.width = data[i] + "px";
+        bar.style.height = "30px";
+        bar.style.backgroundColor = "orange";
+        bar.style.marginBottom = "4px";
+        bar.style.border = "#000000";
+        chart.appendChild(bar);
+      }
+    </script>
+  </body>
+</html>
