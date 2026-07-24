@@ -1,0 +1,67 @@
+Map and Filter are both methods and are chained after an array.
+
+1. MAP TO TRANSFORM EVERY ITEM:
+
+Map calls a function on each element of the array.
+At each iteration, the function returns a new value.
+All the new values make the final new array.
+
+const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map((n) => {
+    return n*2;
+});
+---------------------------------------------------------------------------------------------------
+
+console.log(doubled);   --> [2, 4, 6, 8, 10]
+
+const tripled = numbers.map((n) =>{
+    return n*3;
+});
+
+console.log(tripled);   --> [3, 6, 9, 12, 15]
+---------------------------------------------------------------------------------------------------
+
+2. MAP WITH OBJECTS:
+
+In D3, the dataset is often an array of objects.
+At each iteration the function receives one object from the array and can EXTRACT or TRANSFORM its values.
+
+const data = [
+    {country: "France", population: 67},
+    {country: "Germany", population: 83},
+    {country: "Spain", population: 47}    
+];
+
+const name = data.map((n) => {
+    return (n.country)          --> n.country means it is extracting the country column from the array.
+});
+
+console.log(name);  --> ["France", "Germany", "Spain"]
+---------------------------------------------------------------------------------------------------
+
+const data = [
+    {country: "France", population: 67},
+    {country: "Germany", population: 83},
+    {country: "Spain", population: 47}    
+];
+
+const labels = data.map((l) => {
+    return (l.country + ":" + l.population + 'M')   --> l.country & l.population means it is extracting the country and population column from the array.
+});
+
+console.log(labels);
+---------------------------------------------------------------------------------------------------
+
+3. FILTER TO KEEP MATCHING ITEMS
+
+Filter works the same way as map. You pass it a function that runs on each item of the array.
+The difference is that the function must return a boolean. Filter keeps only the items where the function returns true.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
+
+const big = numbers.filter((n) => {
+    return (n>4)
+});
+
+console.log(big);   --> [5, 6, 7, 8]
