@@ -65,3 +65,42 @@ const big = numbers.filter((n) => {
 });
 
 console.log(big);   --> [5, 6, 7, 8]
+---------------------------------------------------------------------------------------------------
+
+const data = [
+  { country: "France", population: 67 },
+  { country: "Germany", population: 83 },
+  { country: "Spain", population: 47 },
+  { country: "Poland", population: 38 }
+];
+
+const large = data.filter((l) => {
+    return (l.population > 40)
+});
+
+console.log(large);     --> [{country: "France", population: 67}, {country: "Germany", population: 83}, country: "Spain", population: 47]
+---------------------------------------------------------------------------------------------------
+
+4. CHAINING MAP AND FILTER
+
+Since both methods return arrays, you can chain them together. This is a very common pattern.
+
+const data = [
+  { country: "France", population: 67 },
+  { country: "Germany", population: 83 },
+  { country: "Spain", population: 47 },
+  { country: "Poland", population: 38 }
+];
+
+//Filter large countries and then extract their names.
+
+const largeCountries = data
+    .filter((l) => {
+    return (l.population > 50)  --> Filter countries with population > 50.
+})
+    .map((l) => {
+        return (l.country)  --> Only Map country names with population > 50
+    });
+
+console.log(largeCountries);
+---------------------------------------------------------------------------------------------------
