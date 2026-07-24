@@ -1,0 +1,10 @@
+//Log the population of Germany (the second country in the array).
+
+const data = [
+  { country: "France", population: 67 },
+  { country: "Germany", population: 83 },
+  { country: "Spain", population: 47 }
+];
+
+// Log Germany's population
+console.log(data[1].population);    --> 83

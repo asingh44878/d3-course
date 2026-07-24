@@ -1,0 +1,9 @@
+//Create a function that takes a name and score and returns an object with both.
+
+// Return an object with name and score properties
+const makePlayer = (name, score) => ({
+  name: name, score:score
+})
+
+console.log(makePlayer("Alice", 100));
+// should log { name: "Alice", score: 100 }

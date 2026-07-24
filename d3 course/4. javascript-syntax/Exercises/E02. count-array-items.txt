@@ -1,0 +1,6 @@
+Log: There are 5 countries in the list using .length and a template literal.
+
+const countries = ["France", "Germany", "Spain", "Italy", "Portugal"];
+
+// Log: "There are X countries in the list"
+console.log(`There are ${countries.length} countries in the list.`);    --> "There are 5 countries in the list."

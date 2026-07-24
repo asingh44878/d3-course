@@ -1,0 +1,10 @@
+//Log: The dataset has 3 countries
+
+const data = [
+  { country: "France", population: 67 },
+  { country: "Germany", population: 83 },
+  { country: "Spain", population: 47 }
+];
+
+// Log: "The dataset has X countries"
+console.log(`The dataset has ${data.length} countries.`);   --> "The dataset has 3 countries."

@@ -1,0 +1,9 @@
+//Create a function multiply that takes two numbers and returns their product.
+
+// Create a 'multiply' function with two parameters
+const multiply = ((a,b) => {
+  return a*b
+});
+
+console.log(multiply(3, 4));   // should log 12
+console.log(multiply(7, 8));   // should log 56

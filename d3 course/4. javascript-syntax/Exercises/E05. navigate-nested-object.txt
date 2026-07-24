@@ -1,0 +1,14 @@
+Log the value "Tokyo" from the object below.
+
+const company = {
+  name: "TechCorp",
+  headquarters: {
+    country: "Japan",
+    city: "Tokyo",
+    employees: 5000
+  },
+  founded: 2010
+};
+
+// Log the city
+console.log(company.headquarters.city); --> "Tokyo"

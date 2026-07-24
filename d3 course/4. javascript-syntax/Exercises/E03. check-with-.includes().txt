@@ -1,0 +1,10 @@
+Check if "Spain" and "Japan" are in the array.
+
+const countries =
+  ["France", "Germany", "Spain", "Italy", "Portugal"];
+
+// Check if "Spain" is in the array
+console.log(countries.includes("Spain"));   --> true
+
+// Check if "Japan" is in the array
+console.log(countries.includes("Japan"));   --> true

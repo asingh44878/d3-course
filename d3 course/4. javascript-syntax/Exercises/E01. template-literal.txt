@@ -1,0 +1,8 @@
+Use a template literal (backticks + ${}) to log: The hypotenuse is 5
+
+const sideA = 3;
+const sideB = 4;
+const hypotenuse = Math.sqrt(sideA ** 2 + sideB ** 2);
+
+// Use backticks and ${} to insert the variable
+console.log(`The hypotenuse is ${hypotenuse}`); --> "The hypotenuse is 5"

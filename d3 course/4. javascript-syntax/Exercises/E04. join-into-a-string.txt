@@ -1,0 +1,6 @@
+Use .join() to log: France, Germany, Spain
+
+const countries = ["France", "Germany", "Spain"];
+
+// Join the array into a string with ", " as separator
+console.log(countries.join(", "));  --> "France, Germany, Spain"
