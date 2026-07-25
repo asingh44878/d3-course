@@ -1,0 +1,9 @@
+// Use a ternary to set status to "hot" if temperature is above 30, otherwise "cold".
+
+const temperature = 35;
+
+// Use a ternary: condition ? ifTrue : ifFalse
+
+const status = temperature > 30 ? "hot" : "cold"
+
+console.log(status);  // should log "hot"

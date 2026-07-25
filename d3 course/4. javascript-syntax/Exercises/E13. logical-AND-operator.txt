@@ -1,0 +1,9 @@
+//Check if a person can enter: they must be 18 or older AND have a ticket.
+
+const age = 22;
+const hasTicket = true;
+
+// Can they enter? (age >= 18 AND hasTicket)
+const canEnter = (age >= 18 && hasTicket);
+
+console.log(canEnter);   --> true

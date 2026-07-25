@@ -1,0 +1,14 @@
+// Use filter to keep only cities with temperature above 19.
+
+const data = [
+  { city: "Paris", temp: 22 },
+  { city: "London", temp: 18 },
+  { city: "Berlin", temp: 20 }
+];
+
+// Keep cities where temp > 19
+const warm = data.filter((t) => {
+  return (t.temp > 19)
+});
+
+console.log(warm);  --> [{ city: "Paris", temp: 22 }, { city: "Berlin", temp: 20 }]

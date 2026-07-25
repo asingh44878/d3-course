@@ -1,0 +1,9 @@
+// Set the color to "green" if value is positive, "red" if negative, and "gray" if zero.
+
+const value = -5;
+
+
+const color = 
+value > 0 ? "green" : value < 0 ? "red" : "gray"
+
+console.log(color);  --> "red"

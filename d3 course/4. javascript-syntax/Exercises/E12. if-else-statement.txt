@@ -1,0 +1,12 @@
+// Write an if/else that logs "pass" if score is 60 or above, otherwise "fail".
+
+const score = 45;
+
+if (score >=60){
+  console.log("Pass");
+}
+else{
+  console.log("Fail")
+};                      --> "Fail"
+
+// If score >= 60, log "pass", otherwise log "fail"

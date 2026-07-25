@@ -1,0 +1,17 @@
+// Filter cities with temp above 19, then extract just their names.
+
+const data = [
+  { city: "Paris", temp: 22 },
+  { city: "London", temp: 18 },
+  { city: "Berlin", temp: 20 }
+];
+
+
+const warmCityNames = data.filter ((n) => {
+  return(n.temp > 19)
+})
+.map((n) => {
+  return(n.city)
+});
+
+console.log(warmCityNames);  --> ["Paris", "Berlin"]

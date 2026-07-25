@@ -1,0 +1,10 @@
+// Use map to triple every number in the array.
+
+const numbers = [2, 4, 6, 8];
+
+// Use map to triple each number
+const tripled = numbers.map((n) => {
+  return (n * 3)
+});
+
+console.log(tripled);  --> [6, 12, 18, 24]

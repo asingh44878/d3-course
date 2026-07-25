@@ -1,0 +1,19 @@
+// This function is broken — fix it so it returns the greeting.
+
+const greet = (name) => {
+  const greeting = "Hello, " + name + "!";
+  greeting;
+};
+
+console.log(greet("Bob"));  // should log "Hello, Bob!"
+
+
+
+
+
+const greet = (name) => {
+  return  "Hello, " + name + "!";
+  greeting;
+};
+
+console.log(greet("Bob"));  // will log "Hello, Bob!"

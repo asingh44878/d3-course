@@ -1,0 +1,14 @@
+//Use map to extract all the city names into a new array.
+
+const data = [
+  { city: "Paris", temp: 22 },
+  { city: "London", temp: 18 },
+  { city: "Berlin", temp: 20 }
+];
+
+
+const cities = data.map((n) => {
+  return (n.city)
+});
+
+console.log(cities);  --> ["Paris", "London", "Berlin"]
