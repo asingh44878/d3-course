@@ -1,0 +1,13 @@
+-- The App component currently returns null — so nothing shows up.
+
+export default function App() {
+  return null;
+}
+
+-- Replace null with an <h1> element that says "Hello World".
+
+export default function App() {
+  return (
+    <h1>Hello World!</h1>
+  );
+}

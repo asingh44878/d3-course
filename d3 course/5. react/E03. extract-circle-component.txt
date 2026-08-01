@@ -1,0 +1,30 @@
+-- App.js
+
+import Circle from "./Circle";
+
+export default function App() {
+  return (
+    <div>
+      <p>Move the circle into its own component.</p>
+      <Circle />
+    </div>
+  );
+}
+
+-- Circle.jsx
+
+// Create a Circle component here and export it!
+const Circle = () => {
+	return (
+	 <div
+	    style={{
+          width: 50,
+          height: 50,
+          backgroundColor: "dodgerblue",
+          borderRadius: "50%",
+	  }}
+	/>
+	);
+}
+
+export default Circle;

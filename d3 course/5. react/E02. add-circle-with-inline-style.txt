@@ -1,0 +1,23 @@
+export default function App() {
+  return (
+    <div>
+      <p>Add a circle below this text!</p>
+      {/* Hint: a circle is just a div with equal width,
+          height and borderRadius: "50%" */}
+    </div>
+  );
+}
+
+-- Add a <div> inside the App that looks like a circle.
+-- Use inline styles: width: 50, height: 50, backgroundColor: "dodgerblue", and borderRadius: "50%".
+
+export default function App() {
+  return (
+    <div>
+      <p>Add a circle below this text!</p>
+      {
+        <div style={{width: 50, height: 50, backgroundColor: "dodgerBlue", borderRadius: "50%"}} />
+        }
+    </div>
+  );
+}
