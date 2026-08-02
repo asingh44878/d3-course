@@ -1,0 +1,37 @@
+// The app currently renders one <Circle />.
+Render it 4 times total.
+
+App.js
+
+import Circle from "./Circle";
+
+const App = () => {
+  return (
+    <div>
+      <Circle />
+      <Circle />
+      <Circle />
+      <Circle />
+    </div>
+  );
+};
+
+export default App;
+
+Circle.jsx
+
+const Circle = () => {
+  return (
+    <div
+      style={{
+        width: 50,
+        height: 50,
+        backgroundColor: "dodgerblue",
+        borderRadius: "50%",
+        margin: 14
+      }}
+    />
+  );
+};
+
+export default Circle;

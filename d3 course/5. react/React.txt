@@ -1,0 +1,121 @@
+WHAT IS REACT?
+React is a JavaScript library that writes web applications as a set of reusable components. It is a collection of pre-written code
+that you import into your project and use.
+
+COMPONENTS IN REACT:
+The fundamental building block of React is a Component.
+A Component is a JavaScript function that returns what should appear on the screen.
+
+Here is the simplest possible React app.
+
+export default function App() {
+  return (
+    <div>
+      <h1>Hello World!</h1>
+      <p>Welcome to the d3 loves React course</p>
+    </div>
+  );
+}
+
+Its just a function called App that returns a div with some text in it.
+--------------------------------------------------------------------------------------------------------------------------------------
+
+COMPOSITION: REACT IS LIKE LEGO
+Composition makes Components powerful. You can create other Components and use them one or several times inside a parent component.
+
+In this example, the App component renders a bit of text and then renders component called Rectangle 4 times.
+________________________________________________________________________________________________________________________________________
+
+App.js
+import Rectangle from "./Rectangle";
+
+const App = () => {
+  return(
+    <div>
+      <h1>Components Composition</h1>
+      <p>Each Rectangle below is a reusable component.</p>
+      <div>
+        <Rectangle />
+        <Rectangle />
+        <Rectangle />
+        <Rectangle />
+      </div>
+    </div>
+  );
+};
+
+export default App;
+
+________________________________________________________________________________________________________________________________________
+
+Rectangle.jsx
+
+const Rectangle = () => {
+  return (
+    <div>
+      style={{
+        width: 120,
+        height: 60,
+        backgroundColor: "dodgerblue",
+        borderRadius: 4,
+        margin: 4
+      }}
+    </div>
+  );
+};
+
+export default Rectangle;
+________________________________________________________________________________________________________________________________________
+
+Barplot.jsx
+
+import Rectangle from "./Rectangle";
+
+const Barplot = () => {
+  return (
+    <div>
+      <Rectangle />
+      <Rectangle />
+      <Rectangle />
+      <Rectangle />
+    </div>
+  );
+};
+
+export default Barplot;
+________________________________________________________________________________________________________________________________________
+
+BarplotApp.js
+
+import Barplot from "./Barplot";
+
+const BarplotApp = () => {
+  return (
+    <div style={{display: "flex", gap: 24}}>
+      <Barplot />
+      <Barplot />
+      <Barplot />
+      <Barplot />
+    </div>
+  );
+};
+
+export default BarplotApp;
+--------------------------------------------------------------------------------------------------------------------------------------
+
+DISECTING THE SYNTAX
+
+The Components always start with an Uppercase. e.g <Barplot />. Also <div> will not be considered a component.
+.JSX is JavaScript XML
+
+In JSX the <style> attribute takes a JavaScript object therefore its in {{}}. The outer pair means its JavaScript, the inner pair means its an object.
+Also, background-color (kebab-case) becomes backgroundColor (camel-Case).
+
+In JSX you write className instead of class unlike in HTML and CSS.
+<div ClassName="container" />
+
+At the top of each file you see a import statement. This is how JavaScript modules work.
+import Barplot from "./Barplot";
+
+At the end of each file you see a export statement. This is how JavaScript modules keep the code organized and is what makes the component reuse possible.
+export default BarplotApp;
