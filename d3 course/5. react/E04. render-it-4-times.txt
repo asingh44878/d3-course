@@ -5,7 +5,7 @@ App.js
 
 import Circle from "./Circle";
 
-const App = () => {
+export default function App () {
   return (
     <div>
       <Circle />
@@ -15,8 +15,6 @@ const App = () => {
     </div>
   );
 };
-
-export default App;
 
 Circle.jsx
 

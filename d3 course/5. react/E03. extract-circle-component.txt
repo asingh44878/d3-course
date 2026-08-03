@@ -14,7 +14,7 @@ export default function App() {
 -- Circle.jsx
 
 // Create a Circle component here and export it!
-const Circle = () => {
+export default function Circle () {
 	return (
 	 <div
 	    style={{
@@ -25,6 +25,4 @@ const Circle = () => {
 	  }}
 	/>
 	);
-}
-
-export default Circle;
+};

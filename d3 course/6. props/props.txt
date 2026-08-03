@@ -1,0 +1,53 @@
+Props are used to pass data and options through components.
+
+SYNTAX FOR WRITING PROPS:
+
+---------------------------------------------------------------------------------------------------
+A. App.js
+
+import Barplot from "./Barplot";
+
+export default function App () {
+    return(
+        <div style={{display: "flex", gap: 24}}>
+            <Barplot color="green" />
+            <Barplot color="red" />
+            <Barplot color="blue" />
+        </div>
+    )
+}
+
+B. Barplot.jsx
+
+import Rectangle from "./Rectangle";
+
+export default function Barplot ( {color} ) {
+    return(
+        <div>
+            <Rectangle color={color} />
+            <Rectangle color={color} />
+            <Rectangle color={color} />
+        </div>
+    )
+}
+
+C. Rectangle.jsx
+
+export default function Rectangle ( {color} ) {
+    return(
+        <div style={{
+            width: 120,
+            height: 60,
+            backgroundColor: color,
+            borderRadius: 4,
+            margin: 4
+            }}
+        </div>
+    )
+}
+---------------------------------------------------------------------------------------------------
+
+Here the components 'Barplot' and 'Rectangle' are accepting one argument called {color} which is being called in the App as:
+<Barplot color="green" />
+<Barplot color="red" />
+<Barplot color="blue" />
