@@ -1,0 +1,96 @@
+CODE EXPLANATION: Data-driven positioning with React
+======================================================
+
+This builds on the composition idea from the Rectangle example, but adds
+data-driven positioning, which is a big step toward D3-style thinking.
+
+------------------------------------------------------------------------
+import Circle from "./Circle";
+------------------------------------------------------------------------
+Imports a Circle component from a separate file (Circle.js), the same
+pattern as the Rectangle import - a small, reusable piece of UI defined
+elsewhere.
+
+------------------------------------------------------------------------
+const data = [10, 40, 80, 130, 160, 200, 250, 280, 320, 370];
+------------------------------------------------------------------------
+An array of ten numbers. These aren't styled or labeled yet - just raw
+values that will be used to control WHERE each circle appears
+horizontally. This is the "data" that drives the visualization,
+conceptually similar to how the D3 bar chart data drove bar heights.
+
+------------------------------------------------------------------------
+export default function App() {
+  return (
+------------------------------------------------------------------------
+Declares and exports the main App component - same pattern as before, a
+function that returns JSX (React's HTML-like syntax).
+
+------------------------------------------------------------------------
+    <div style={{ position: "relative", width: 450, height: 80 }}>
+------------------------------------------------------------------------
+This outer div is the "canvas" the circles will be placed inside.
+position: "relative" is important - it doesn't move this div itself,
+but it establishes a POSITIONING CONTEXT for anything inside it that
+uses position: "absolute". Without this, the absolute positioning below
+wouldn't behave predictably (absolutely positioned elements need a
+positioned ancestor to measure "left" and "top" against).
+
+------------------------------------------------------------------------
+      {data.map((x, i) => (
+------------------------------------------------------------------------
+This is the core data-binding step - conceptually very close to D3's
+.data().join() pattern, just written in React/JavaScript style instead.
+.map() loops over every value in the data array and transforms each one
+into a piece of JSX. For each loop iteration:
+  - x is the current number from the array (e.g., 10, then 40, then 80...)
+  - i is the index of that number in the array (0, 1, 2...)
+
+------------------------------------------------------------------------
+        <div key={i} style={{ position: "absolute", left: x, top: 15 }}>
+------------------------------------------------------------------------
+For each data value, this creates a wrapper div positioned absolutely
+within the outer div.
+  - key={i} - React requires a unique key on elements generated in a
+    loop, so it can efficiently track which element is which if the
+    list ever changes. The index works here since the list order is
+    static.
+  - position: "absolute" - takes this div out of normal document flow
+    and positions it exactly using left/top, relative to the nearest
+    positioned ancestor (the outer div from before).
+  - left: x - this is the key line: each circle's horizontal position
+    is directly driven by its data value. The circle for 10 sits near
+    the left edge; the circle for 370 sits far to the right - exactly
+    like a D3 x-scale mapping values to pixel positions, just without
+    an explicit scale function here (the raw numbers are used directly
+    as pixels).
+  - top: 15 - every circle sits at the same vertical position, so they
+    form a single horizontal row.
+
+------------------------------------------------------------------------
+          <Circle />
+        </div>
+      ))}
+------------------------------------------------------------------------
+Inside each positioned wrapper div, render one Circle component. Since
+this happens once per array item, you end up with ten circles total,
+each independently positioned based on its corresponding data value.
+
+------------------------------------------------------------------------
+    </div>
+  );
+}
+------------------------------------------------------------------------
+Closes the outer canvas div and the component.
+
+======================================================
+BIG PICTURE
+======================================================
+This is essentially a hand-rolled, minimal version of what D3's scale +
+selection + join pattern does for you automatically - data values are
+directly translated into visual (pixel) positions, and one DOM element
+is created per data point. The difference is that here, x is used as a
+raw pixel value with no scale transforming it, so if the data range or
+container width changed, you'd need to adjust the numbers manually -
+whereas a D3 scaleLinear (like in the bar chart project) would handle
+that mapping dynamically.

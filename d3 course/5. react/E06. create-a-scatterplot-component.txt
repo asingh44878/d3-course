@@ -1,0 +1,118 @@
+EXERCISE: Move chart logic from App.js into a new Scatterplot component
+==========================================================================
+
+TASK
+----
+The chart logic is currently in App.js. Move it into a new Scatterplot
+component in Scatterplot.jsx.
+  - App.js should just import and render <Scatterplot />.
+
+There were two problems to fix:
+  1. Scatterplot.jsx had the wrong code in it (it was a copy of
+     Circle.jsx, not actual scatterplot logic).
+  2. The chart logic (the data array and the .map() that positions
+     circles) needed to move out of App.js and into Scatterplot.jsx.
+
+
+STEP 1: Understand what needs to move
+--------------------------------------
+The "chart logic" is this piece:
+
+  const data = [10, 40, 80, 130, 160, 200, 250, 280, 320, 370];
+  // ...
+  {data.map((x, i) => (
+    <div key={i} style={{ position: "absolute", left: x, top: 15 }}>
+      <Circle />
+    </div>
+  ))}
+
+This needs to leave App.js entirely and live inside Scatterplot.jsx
+instead.
+
+
+STEP 2: Rewrite Scatterplot.jsx
+--------------------------------
+Replace its current (incorrect) contents with the actual chart logic,
+importing Circle since the scatterplot needs to render circles:
+
+  import Circle from "./Circle";
+
+  const data = [10, 40, 80, 130, 160, 200, 250, 280, 320, 370];
+
+  const Scatterplot = () => {
+    return (
+      <div style={{ position: "relative", width: 450, height: 80 }}>
+        {data.map((x, i) => (
+          <div key={i} style={{ position: "absolute", left: x, top: 15 }}>
+            <Circle />
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  export default Scatterplot;
+
+Why each part is here:
+  - import Circle from "./Circle"; -> Scatterplot needs Circle now,
+    since it's the one rendering circles, not App anymore.
+  - const data = [...] -> the data array moves here too, since it's
+    only used by this chart logic, not by App itself.
+  - The outer positioned div, the .map(), and everything inside it ->
+    copied over unchanged. The logic itself doesn't change at all;
+    it's just relocating to a new file.
+  - export default Scatterplot; -> makes this component importable
+    elsewhere, exactly like Circle and the old App logic were exported.
+
+
+STEP 3: Simplify App.js
+-------------------------
+App.js just needs to import and render <Scatterplot />:
+
+  import Scatterplot from "./Scatterplot";
+
+  export default function App() {
+    return (
+      <Scatterplot />
+    );
+  }
+
+Why this works: App no longer needs to know anything about circles,
+positions, or data - it just needs to say "render the Scatterplot
+component here." All the actual chart-building logic is now
+encapsulated inside Scatterplot.jsx, which is the whole point of this
+exercise: SEPARATING CONCERNS, so App stays simple and each component
+owns its own logic.
+
+
+STEP 4: Leave Circle.jsx untouched
+------------------------------------
+It's already correct and doesn't need any changes - it's a small,
+reusable building block, same as before.
+
+  const Circle = () => {
+    return (
+      <div
+        style={{
+          width: 50,
+          height: 50,
+          backgroundColor: "dodgerblue",
+          borderRadius: "50%",
+        }}
+      />
+    );
+  };
+  export default Circle;
+
+
+THE RESULT: three clean files
+-------------------------------
+  - App.js         -> just renders <Scatterplot />, knows nothing about
+                       circles or data.
+  - Scatterplot.jsx -> owns the data array and the logic for turning it
+                       into positioned circles.
+  - Circle.jsx      -> a single reusable dot, with no knowledge of data
+                       or positioning at all.
+
+This is a common pattern you'll keep seeing: each component knows only
+what it needs to know, and nothing more.
