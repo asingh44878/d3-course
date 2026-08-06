@@ -51,3 +51,60 @@ Here the components 'Barplot' and 'Rectangle' are accepting one argument called 
 <Barplot color="green" />
 <Barplot color="red" />
 <Barplot color="blue" />
+---------------------------------------------------------------------------------------------------
+
+-- A component can accept many props. Adding 'color' and 'value' prop to rectangle:
+
+const Rectangle = ({color, value}) => (
+    return(
+        <div style={{
+            width: value,
+            height: 30,
+            backgroundColor: color,
+            borderRadius: 4,
+            margin: 4
+            }}
+        </div>
+    )
+);
+
+export default Rectangle;
+
+-- Now passing the 'color' and 'data' prop to Barplot:
+
+import Rectangle from "./Rectangle";
+
+export default function Barplot ({color, data}) {
+    return(
+        <div>
+            {data.map(value, i) => (
+                <Rectangle key={i} color={color} value={value} /> 
+            )}
+        </div>
+    );
+};
+
+-- Calling everything in App to make the final charts:
+
+import Barplot from "./Barplot";
+
+export default function App () {
+    return(
+        <div style={{ display: flex, gap: 24}}>
+            <Barplot
+                color: "green"
+                data: {[200, 180, 140, 90, 50]}
+            />
+
+            <Barplot
+                color: "red"
+                data: {[200, 160, 120, 80, 40]}
+            />
+
+            <Barplot
+                color: "blue"
+                data: {[240, 190, 130, 70, 30]}
+            />
+        </div>
+    );
+};

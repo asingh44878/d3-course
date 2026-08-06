@@ -1,0 +1,47 @@
+-- App passes a color prop to Barplot. But the bars are still gray!
+-- Thread the color prop through: make Barplot pass it down to each Rectangle, and make Rectangle use it.
+-- In real apps, props often need to travel through multiple levels of components. App passes a prop to Barplot, which passes it to Rectangle. This is called prop drilling — a fundamental pattern in React.
+
+-- App.js
+
+import Barplot from "./Barplot";
+
+export default function App() {
+  return (
+    <div style={{ display: "flex", gap: 24, padding: 20 }}>
+      <Barplot color="mediumseagreen" />
+      <Barplot color="dodgerblue" />
+      <Barplot color="tomato" />
+    </div>
+  );
+}
+
+-- Barplot.jsx
+
+import Rectangle from "./Rectangle";
+
+export default function Barplot ({color}) {
+  return (
+    <div>
+      <Rectangle color={color}/>
+      <Rectangle color={color}/>
+      <Rectangle color={color}/>
+    </div>
+  );
+};
+
+-- Rectangle.jsx
+
+export default function Rectangle ({color}) {
+  return (
+    <div
+      style={{
+        width: 120,
+        height: 30,
+        backgroundColor: {color},
+        borderRadius: 4,
+        margin: 4,
+      }}
+    />
+  );
+};

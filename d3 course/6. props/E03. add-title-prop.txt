@@ -1,0 +1,36 @@
+-- The App calls <Scatterplot /> three times. Right now they all display the same hardcoded "Title".
+-- Add a title prop to the Scatterplot component and use it to display the title.
+-- In App.js, pass a different title to each: "Paris", "London", and "Berlin".
+
+-- App.js
+
+import Scatterplot from "./Scatterplot";
+
+export default function App() {
+  return (
+    <div style={{ display: "flex", gap: 40, padding: 20 }}>
+      <Scatterplot title="Paris"/>
+      <Scatterplot  title="London"/>
+      <Scatterplot  title="Berlin"/>
+    </div>
+  );
+}
+
+-- Scatterplot.jsx
+
+export default function Scatterplot ({title}) {
+  return (
+    <div style={{ textAlign: "center" }}>
+      <p style={{ fontWeight: "bold", marginBottom: 4 }}>{title}</p>
+      <div
+        style={{
+          width: 30,
+          height: 30,
+          borderRadius: "50%",
+          backgroundColor: "dodgerblue",
+          margin: "0 auto",
+        }}
+      />
+    </div>
+  );
+};

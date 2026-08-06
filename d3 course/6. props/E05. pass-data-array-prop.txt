@@ -1,0 +1,50 @@
+-- The Scatterplot component has its data hardcoded inside. Move the data array to App.js.
+-- Pass it as a data prop to Scatterplot.
+-- Update Scatterplot to read from props.data instead of its local variable.
+
+-- Scatterplot.jsx
+
+export default function Scatterplot ({data}) {
+    return(
+        <div style={{position: "relative", width: 300, height: 120}}>
+            {data.map((d, i) => (
+                <div
+                    key={i}
+                    style={{
+                        position: "absolute",
+                        left: d.x,
+                        top: d.y,
+                        width: 16,
+                        height: 16,
+                        borderRadius: "50%",
+                        backgroundColor: "dodgerblue"
+                    }}
+                </div>
+            ))}
+        </div>
+    );
+};
+
+-- App.js
+
+import Scatterplot from "./Scatterplot";
+
+const data = [
+    {x: 30, y:20},
+    {x: 80, y:90},
+    {x: 150, y:10},
+    {x: 200, y:60},
+    {x: 250, y:40},
+    {x: 130, y:80},
+];
+
+export defualt App (data) {
+    return(
+        <div 
+            style={{
+                padding: 20
+            }}
+            <Scatterplot data={data} />
+        </div>
+    )
+}

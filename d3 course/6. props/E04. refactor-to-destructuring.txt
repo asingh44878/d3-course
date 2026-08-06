@@ -1,0 +1,40 @@
+-- The Badge component uses props.color, props.size, and props.label everywhere.
+-- Refactor it to use destructuring: ({ color, size, label }) instead of (props).
+-- The result should look and work exactly the same — just cleaner code.
+
+-- App.js
+
+import Badge from "./Badge";
+
+export default function App() {
+  return (
+    <div style={{ display: "flex", gap: 16, padding: 20 }}>
+      <Badge color="tomato" size={60} label="A" />
+      <Badge color="dodgerblue" size={80} label="B" />
+      <Badge color="mediumseagreen" size={50} label="C" />
+    </div>
+  );
+}
+
+-- Badge.jsx
+
+export default function Badge ({size, color, label}) {   --> props are passed within single culry brackets.
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: "50%",
+        backgroundColor: color,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "white",
+        fontWeight: "bold",
+          fontSize: size / 3,
+      }}
+    >
+      {label}
+    </div>
+  );
+};

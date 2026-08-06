@@ -1,0 +1,52 @@
+-- The Scatterplot component renders 10 circles. It already reads props.opacity to set each circle's opacity.
+-- In App.js, pass an opacity prop with a value of 0.5 to make the circles semi-transparent.
+
+-- Scatterplot.jsx
+
+export default function Scatterplot ({opacity}) {
+  const data = [
+    { x: 30, y: 50 },
+    { x: 80, y: 120 },
+    { x: 150, y: 30 },
+    { x: 200, y: 90 },
+    { x: 250, y: 60 },
+    { x: 300, y: 140 },
+    { x: 130, y: 110 },
+    { x: 350, y: 40 },
+    { x: 180, y: 80 },
+    { x: 270, y: 130 },
+  ];
+
+  return (
+    <div style={{ position: "relative", width: 400, height: 170 }}>
+      {data.map((d, i) => (
+        <div
+          key={i}
+          style={{
+            position: "absolute",
+            left: d.x,
+            top: d.y,
+            width: 20,
+            height: 20,
+            borderRadius: "50%",
+            backgroundColor: "dodgerblue",
+            opacity: opacity,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+-- App.js
+
+import Scatterplot from "./Scatterplot";
+
+export default function App() {
+  return (
+    <div>
+      <h3>My scatterplot</h3>
+      <Scatterplot  opacity={0.5}/>     --> The value always comes at the top most file, in this case App.js.
+    </div>
+  );
+}

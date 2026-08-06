@@ -1,0 +1,31 @@
+-- Add a new rotation prop to the Square component so it can be rotated.
+-- In App.js, pass rotation={45} to rotate the square by 45 degrees.
+-- Hint: in CSS, you can rotate an element with transform: "rotate(45deg)".
+
+-- App.js
+
+import Square from "./Square";
+
+export default function App() {
+  return (
+    <div style={{ padding: 60 }}>
+      <Square color="dodgerblue" transform="rotate(45deg)"/>
+    </div>
+  );
+}
+
+-- Square.jsx
+
+export default function Square ({color, transform}) {
+  return (
+    <div
+      style={{
+        width: 100,
+        height: 100,
+        backgroundColor: color,
+        borderRadius: 4,
+        transform: transform
+      }}
+    />
+  );
+};

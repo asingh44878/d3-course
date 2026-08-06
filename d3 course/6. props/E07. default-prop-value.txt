@@ -1,0 +1,32 @@
+-- The first two circles pass a size prop, but the third one doesn't — and it disappears because size is undefined.
+-- Fix the Circle component so that size defaults to 40 when not provided.
+-- Hint: use destructuring with a default value.
+
+-- App.js
+
+import Circle from "./Circle";
+
+export default function App() {
+  return (
+    <div style={{ display: "flex", gap: 12, padding: 20, alignItems: "center" }}>
+      <Circle size={80} color="tomato" />
+      <Circle size={50} color="dodgerblue" />
+      <Circle size={40} color="mediumseagreen" />
+    </div>
+  );
+}
+
+-- Circle.jsx
+
+export default function Circle ({ size, color }) {
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        borderRadius: "50%",    -> This is what makes it a circle.
+        backgroundColor: color,
+      }}
+    />
+  );
+};

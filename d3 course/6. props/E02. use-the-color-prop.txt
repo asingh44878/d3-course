@@ -1,0 +1,29 @@
+-- The App component passes a color prop to <Square />. But the square is always gray!
+-- Open Square.jsx and fix it so that the square actually uses the color prop for its background color.
+
+-- App.js
+
+import Square from "./Square";
+
+export default function App() {
+  return (
+    <div>
+      <Square color="tomato" />
+    </div>
+  );
+}
+
+-- Square.jsx
+
+export default function Square ({color}) {  --> the culry brackets are used to pass the argument.
+  return (
+    <div
+      style={{
+        width: 100,
+        height: 100,
+        backgroundColor: color,
+        borderRadius: 4,
+      }}
+    />
+  );
+};
